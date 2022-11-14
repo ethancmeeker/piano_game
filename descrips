@@ -1,0 +1,67 @@
+Name:
+A  word or set of words by which a person, place, or thing is known, addressed, or referred to. Hold your left hand above you right and hold your index and middle finger together. Bring you left hand down twoards your right hand then back up.
+
+Teacher:
+One who or that which teaches or instructs; an instructor. Hold your hands in an "O" shape against your head. Bring them away from your head then bring them down and point them towards the person you are directing the word to.
+
+What:
+Used in asking the identity or name of a thing or (later) things, specified, indicated, or understood. Hold your hands infront of you in a cup shape and bring them towards your torso then back out. Have a confused expression on your face. 
+
+Why:
+In a direct question: For what reason? from what cause or motive? for what purpose? wherefore? Hold your hand flat with your pinkie against your forehead then bring it down to your chest in a "hang loose" sign then bring it back to the start. Have a confused expression on your face. 
+
+Understand: 
+Understanding; knowledge. Hold you arm so your elbow is making a 90 degree angle and put you index finger up. 
+
+Not understand: 
+To not understanding; knowledge. Hold you arm so your elbow is making a 90 degree angle and put you index finger up and shake your head back and forth.
+
+Money:
+Any generally accepted medium of exchange which enables a society to trade goods without the need for barter; any objects or tokens regarded as a store of value and used as a medium of exchange. Hold your left hand above your right, put all your fingers against your thumb and leave your right hand flat then bring your left hand towards your right then back up to the start.
+
+Like:
+To compare or liken to something or someone else. Hold your left hand in front of you with your fingers spread out. Then, connect your middle finger and thumb together.
+
+Not Like:
+To compare or to not liken to something or someone else. Hold your left hand in front of you with your fingers spread out. Then, connect your middle finger and thumb together. Then pull you left hand away from you body and face your palm down with all your fingers serperated again.
+
+Good:
+As a general adjective of commendation, implying that the thing described is of high or satisfactory quality, suitable for some purpose, or worthy of approval. Hold your left hand above your right with both hands open with your palms facing up. Bring your left hand down to your right then bring it back up to the start.
+
+Friend:
+A person with whom one has developed a close and informal relationship of mutual trust and intimacy; (more generally) a close acquaintance. Often with adjective indicating the closeness of the relationship. Hold your left hand above your right and both hands should be closed with your index fingers out. Bring your index fingers together then close curl around the other index finger. Do the same thing but now with the right hand above the left.
+
+Forget:
+An act of forgetting; a lapse of memory. Hold you left hand up and have your four fingers touching your forehead with your thumb out. Then bring your hand away from your head while closing your four fingers.
+
+Best:
+Of the highest excellence; surpassing all others in quality. Hold your left hand over your mouth then bring it away from your face while turning your hand into a "thumbs up". Then, bring your hand up towards the top of your head still in the thumbs up.
+
+Better:
+Of greater excellence; of superior character or quality. Hold your left hand over your mouth then bring it away from your face while turning your hand into a "thumbs up".
+
+Bad:
+Not of the expected or requisite quality; poor, worthless; deficient, inferior; of a low standard, below par; that one does not think much (or anything) of; poorly made, shoddy (now rare). Hold your left hand in front of your mouth then bring it down towards your torso facing your palm towards the ground. Have a disgusted look on your face.
+
+
+
+85
+25
+90
+25
+95
+95
+80
+25
+80
+95
+95
+
+
+IF [Died Estimate] <= 100 THEN 'orange'
+ELSEIF [Died Estimate] > 100 and [Died Estimate] <= 1000 THEN 'blue'
+ELSEIF [Died Estimate] > 1000 and [Died Estimate] <= 10000 THEN 'green'
+ELSEIF [Died Estimate] > 10000 and [Died Estimate] <= 20000 THEN 'purple'
+ELSE 'pink'
+
+END

@@ -1,0 +1,221 @@
+//------------
+//System Vars
+//------------
+treb_clef_game_start = new Boolean(true);
+var stage = document.getElementById("gameCanvas");
+stage.width = STAGE_WIDTH;
+stage.height = STAGE_HEIGHT;
+var ctx = stage.getContext("2d");
+ctx.fillStyle = "grey";
+ctx.font = GAME_FONTS;
+var last_update = Date.now();
+var wait_time = 0;
+var end_time = 0;
+
+class Sprite {
+	constructor(name, xpos, ypos, height, width){
+		this.name = name;
+		this.x = xpos;
+		this.y = ypos;
+		this.height = height;
+		this.width = width;
+	}
+	
+	draw() {
+		ctx.drawImage(this.name, this.x, this.y, this.height, this.height);
+	}
+}
+	
+const f_btn = new Sprite(t_f, 225, 380, 100, 100);
+const a_btn = new Sprite(t_a, 375, 380, 100, 100);
+const c_btn = new Sprite(t_c, 525, 380, 100, 100);
+const e_btn = new Sprite(t_e, 675, 380, 100, 100);
+//-----------------
+//Browser Detection
+//-----------------
+navigator.sayswho= (function(){
+    var N= navigator.appName, ua= navigator.userAgent, tem;
+    var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+    if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+    M= M? [M[1], M[2]]: [N, navigator.appVersion, '-?'];
+
+    return M;
+})();
+
+function is_inside(posx, posy, butn){
+    return posx > butn.x && posx < butn.x+butn.width && posy < butn.y+butn.height && posy > butn.y;
+}
+
+class gg {
+	constructor(sizey, sizex, dx, dy, img) {
+		this.sizey = sizey;
+		this.sizex = sizex;
+		this.img = img;
+		
+			
+}}
+
+var browser;
+if (navigator.sayswho[0] == "Firefox")
+	browser="f";
+else if (navigator.sayswho[0] == "Chrome")
+	browser="c";
+else if (navigator.sayswho[0] == "Safari")
+	browser="s";
+else  if (navigator.sayswho[0] == "Microsoft")
+	browser="m";
+else
+	browser="f";
+
+Array.prototype.random = function () {
+  return this[Math.floor((Math.random()*this.length))];
+}
+
+var gameloop, mouseX, mouseY, bugxpos, spacelist, spaceword, linelist, selection, guess, answer;
+mouseX = 300; //default values
+mouseY = 300; //default values
+bugxpos = STAGE_WIDTH - 120;
+spacelist = [188, 133, 78, 24];
+spaceword = ["f", "a", "c", "e"];
+linelist = [100]
+selection = spacelist.random();
+guess = '';
+answer = '';
+
+var speed;
+speed = 10;
+
+gameloop = setInterval(update, TIME_PER_FRAME);			
+stage.addEventListener("click", canvasClick, false);
+
+var canvas = document.getElementById('viewport');
+var movement = 400;
+context = canvas.getContext('2d');
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function sleep(delay) {
+    var start = new Date().getTime();
+    while (new Date().getTime() < start + delay);
+}
+
+function canvasClick(event)
+{	
+	if (browser == "f" || browser == "m")
+	{
+		mouseX = event.clientX - stage.offsetLeft + document.documentElement.scrollLeft;
+		mouseY = event.clientY - stage.offsetTop + document.documentElement.scrollTop;
+	}
+	else //"s" or "c"
+	{
+		thing = false
+		mouseX = event.clientX - stage.offsetLeft + document.body.scrollLeft;
+		mouseY = event.clientY - stage.offsetTop + document.body.scrollTop;
+		mouseY = event.clientY - stage.offsetTop + document.body.scrollTop;
+		thing = true
+		
+	}
+}	
+
+function new_selection(list) {
+	var rd, nn;
+	console.log(length.list);
+	rd = Math.floor(Math.random() * 4);
+	console.log(nn);
+	return rd;
+}
+
+function bug() {
+	ctx.drawImage(newImage, bugxpos, selection, 90, 90);
+	bugxpos = bugxpos - speed;
+	if (answer == guess) {
+		var next_move;
+		//wait_time = last_update;
+		//end_time = last_update + 3;
+		guess = '';
+		bugxpos = 400000;
+		//while (wait_time != end_time) {
+		//	console.log('wait');
+		//}
+		bugxpos = STAGE_WIDTH - 120;
+		next_move = new_selection(spacelist)
+		selection = spacelist[next_move];
+		answer = spaceword[next_move];
+		console.log(answer);
+	}
+	if (bugxpos <= 20) {
+		var next_move;
+		bugxpos = STAGE_WIDTH - 120;
+		next_move = new_selection(spacelist)
+		selection = spacelist[next_move];
+		answer = spaceword[next_move];
+		console.log(answer);
+		
+	}
+}	
+
+function btnclick(buttn, return_val){
+	clicked = new Boolean(false);
+	clicked = is_inside(mouseX, mouseY, buttn);
+	if (clicked == true) {
+		console.log(return_val);
+		mouseX = 0;
+		mouseY = 0;
+		guess = return_val
+		return return_val;
+	}
+}
+
+
+
+
+function Treble_Clef_Space(){ 
+	//Clear Canvas
+	ctx.fillStyle = "pink";
+	ctx.fillRect(0, 0, stage.width, stage.height);	
+	ctx.drawImage(tcbd, 0, 0, STAGE_WIDTH, STAGE_HEIGHT);
+	f_btn.draw();
+	a_btn.draw();
+	c_btn.draw();
+	e_btn.draw();
+	f = btnclick(f_btn, 'f');
+	btnclick(a_btn, 'a');
+	btnclick(c_btn, 'c');
+	btnclick(e_btn, 'e');
+	ctx.fillStyle = "white";
+	//heddo(l);
+	bug();
+	btnclick(t_a);
+
+	
+}
+
+function tick() {
+    var now = Date.now();
+    var dt = now - last_update;
+    last_update = now;
+}
+
+//------------
+//Game Loop
+//------------
+function update()
+{		
+	if (treb_clef_game_start == true){
+		Treble_Clef_Space();
+	}
+	
+	
+	//console.log(p)
+	
+}
+
+
+//ctx.lineWidth = 1;
+//ctx.strokeStyle = '#003300';
+//ctx.stroke();
+
+	
+	

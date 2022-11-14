@@ -1,0 +1,63 @@
+{
+  "profiles": [
+    {
+    "Name": "Omar The Beast",
+    "Character": "Rocco",
+    "Storyline": 0,
+    "T_C_S_1": 0,
+    "T_C_L_1": 0,
+    "T_C_A_1": 0,
+    "B_C_L_1": 0,
+    "B_C_S_1": 0,
+    "B_C_A_1": 0,
+    "M_C_1": 0
+  },
+  {
+    "Name": "Sweet E",
+    "Character": "Coda",
+    "Storyline": 0,
+    "T_C_S_1": 2,
+    "T_C_L_1": 0,
+    "T_C_A_1": 3,
+    "B_C_L_1": 0,
+    "B_C_S_1": 0,
+    "B_C_A_1": 2,
+    "M_C_1": 1
+  },
+  {
+    "Name": "Joe-Sue Day",
+    "Character": "Allegro",
+    "Storyline": 0,
+    "T_C_S_1": 0,
+    "T_C_L_1": 0,
+    "T_C_A_1": 0,
+    "B_C_L_1": 0,
+    "B_C_S_1": 0,
+    "B_C_A_1": 0,
+    "M_C_1": 0
+  },
+  {
+    "Name": "Jimmy Happy",
+    "Character": "Rocco",
+    "Storyline": 0,
+    "T_C_S_1": 0,
+    "T_C_L_1": 0,
+    "T_C_A_1": 0,
+    "B_C_L_1": 0,
+    "B_C_S_1": 0,
+    "B_C_A_1": 0,
+    "M_C_1": 0
+  },
+  {
+  "Name": "Mrs. Puffy",
+    "Character": "Allegro",
+    "Storyline": 0,
+    "T_C_S_1": 0,
+    "T_C_L_1": 0,
+    "T_C_A_1": 0,
+    "B_C_L_1": 0,
+    "B_C_S_1": 0,
+    "B_C_A_1": 0,
+    "M_C_1": 0
+}]
+}
